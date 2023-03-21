@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/d_ente_strip6.png" type="Texture2D" id=1]
+
+[node name="Vacio" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cuerpo" type="Sprite2D" parent="."]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -16, -57 )
+hframes = 6
+frame = 5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cabeza" type="Sprite2D" parent="."]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -16, -57 )
+hframes = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ojo" type="Sprite2D" parent="Cabeza"]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -16, -57 )
+hframes = 6
+frame = 1
+__meta__ = {
+"_edit_lock_": true
+}

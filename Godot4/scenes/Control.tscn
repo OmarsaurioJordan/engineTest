@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://c56irhk5j58nk"]
+
+[ext_resource type="Script" path="res://scripts/Control.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj1ar"]
+bg_color = Color(0.733333, 0.65098, 0.447059, 1)
+
+[sub_resource type="Theme" id="Theme_7gb4r"]
+Panel/styles/panel = SubResource("StyleBoxFlat_gj1ar")
+
+[node name="Control" type="Node2D"]
+script = ExtResource("1")
+metadata/_edit_lock_ = true
+
+[node name="Suelo" type="Panel" parent="."]
+offset_right = 2048.0
+offset_bottom = 1536.0
+theme = SubResource("Theme_7gb4r")
+metadata/_edit_lock_ = true
+
+[node name="Mundo" type="Node2D" parent="."]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.662745)
+offset_right = 375.0
+offset_bottom = 558.0
+scale = Vector2(0.8, 0.8)
+metadata/_edit_lock_ = true
+
+[node name="FPS" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 83.0
+offset_bottom = 33.0
+scale = Vector2(3, 3)
+text = "FPS: 0"
+metadata/_edit_lock_ = true
+
+[node name="Units" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 70.0
+offset_right = 73.0
+offset_bottom = 92.0
+scale = Vector2(3, 3)
+text = "Units: 0"
+metadata/_edit_lock_ = true
+
+[node name="Inputs" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 147.0
+offset_right = 73.0
+offset_bottom = 169.0
+scale = Vector2(2.5, 2.5)
+text = "Back:reset
+Enter:create
+Space:hold++
+Right:tipo+
+Left:tipo-"
+metadata/_edit_lock_ = true
+
+[node name="Ref" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 473.0
+offset_right = 73.0
+offset_bottom = 495.0
+scale = Vector2(3, 3)
+text = "Tab:ref(30)"
+metadata/_edit_lock_ = true
+
+[node name="Reloj" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Reloj" to="." method="_on_Reloj_timeout"]
